@@ -16,14 +16,6 @@ export const PLANET_CONFIGS: Record<string, PlanetConfig> = {
     atmosphere: true,
     gravity: 0.38,
     temperature: -63
-  }
-  venus: {
-    name: 'Venus',
-    radius: 5,
-    texturePath: 'assets/images/venus.jpg',
-    atmosphere: false,
-    gravity: 1.0,
-    temperature: 15
   },
   };
 

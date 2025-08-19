@@ -7,7 +7,8 @@ import { QuakeData } from '../../shared/interfaces/planet.interface';
 })
 export class <%= classify(planetName) %>Service extends BasePlanetService {
   protected readonly planetName = '<%= planetName %>';
-  protected readonly apiUrl = 'https://ahmad/api';
+  // Use relative URL - interceptor will prepend the base API URL
+  protected readonly apiUrl = '/api';
 
   protected getFallbackData(): QuakeData[] {
     return [
