@@ -31,7 +31,7 @@ A modern Angular-based space exploration application that allows users to explor
 - **Base Classes**: Abstract base classes for common functionality
 - **Type Safety**: Strongly typed interfaces throughout the application
 - **HTTP Interceptors**: Centralized API management and error handling
-- **Custom Schematics**: Automated planet generation with CLI commands
+- **Automated Planet Generation**: Simple script-based planet creation
 
 ## 📁 Project Structure
 
@@ -46,7 +46,6 @@ src/
 │   │   └── moon/                 # Moon exploration
 │   ├── sidebar/                   # Side navigation
 │   ├── services/                  # Application services
-│   ├── schematics/                # Custom CLI schematics
 │   └── shared/                    # Shared components & utilities
 │       ├── components/            # Reusable UI components
 │       ├── services/              # Base services & utilities
@@ -57,7 +56,9 @@ src/
 ├── assets/
 │   ├── images/                    # Application images
 │   └── sass/                      # Global styles and variables
-└── environments/                   # Environment configurations
+├── environments/                   # Environment configurations
+└── scripts/                       # Utility scripts
+    └── generate-planet.js         # Planet generation script
 ```
 
 ## 🔧 Shared Architecture
@@ -106,7 +107,7 @@ getQuakes(): Observable<QuakeData[]> {
 
 ## 🪐 Planet Generation
 
-The application includes a custom CLI command to generate new planets automatically:
+The application includes a simple script to generate new planets automatically:
 
 ### Quick Planet Generation
 ```bash
@@ -123,27 +124,27 @@ node scripts/generate-planet.js saturn Saturn
 ### What Gets Generated
 - **Component**: Extends BasePlanetComponent with proper configuration
 - **Service**: Extends BasePlanetService with planet-specific data
-- **Template**: HTML with earthquake visualizer and sidebar integration
-- **Styles**: Responsive SASS styling following design patterns
+- **Template**: Clean HTML matching Mars/Moon structure exactly
+- **Styles**: Empty SASS file (uses shared planet.sass)
 - **Tests**: Component and service test files with proper setup
 
 ### Generated Structure
 ```
 src/app/planet/{planet-name}/
 ├── {planet-name}.component.ts          # Main component
-├── {planet-name}.component.html        # Component template
-├── {planet-name}.component.sass        # Component styles
-├── {planet-name}.component.spec.ts     # Component tests
 ├── {planet-name}.service.ts            # Planet service
+├── {planet-name}.component.html        # Component template
+├── {planet-name}.component.sass        # Component styles (empty)
+├── {planet-name}.component.spec.ts     # Component tests
 └── {planet-name}.service.spec.ts       # Service tests
 ```
 
 ### Integration Steps
 After generating a planet:
-1. **Add route** in `src/app/app.routes.ts`
-2. **Add planet config** in `src/app/shared/constants/planet.constants.ts`
+1. **Route added automatically** to `app.routes.ts`
+2. **Planet config added automatically** to `planet.constants.ts`
 3. **Add planet image** to `src/assets/images/{planet}.jpg`
-4. **Update navigation** components
+4. **Update navigation** components (navbar/sidebar)
 
 ## 🚀 Getting Started
 
@@ -279,7 +280,7 @@ The application is built with mobile-first responsive design principles, ensurin
 - Maintain type safety with proper interfaces
 - Use relative URLs in services - the interceptor handles the rest
 - Configure API endpoints in environment files
-- Use the planet generation command for new celestial bodies
+- Use the planet generation script for new celestial bodies
 
 ## 📄 License
 
@@ -293,7 +294,6 @@ For support and questions:
 - Consult the project documentation and code comments
 - See the shared architecture documentation in `src/app/shared/README.md`
 - Review the interceptor documentation in `src/app/shared/interceptors/README.md`
-- Check the schematics documentation in `src/app/schematics/README.md`
 
 ---
 

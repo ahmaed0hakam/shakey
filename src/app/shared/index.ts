@@ -10,8 +10,5 @@ export * from './components/base-planet.component';
 export * from './components/loading-spinner/loading-spinner.component';
 export * from './components/error-display/error-display.component';
 
-// Interceptors
-export * from './interceptors/api.interceptor';
-
 // Constants
 export * from './constants/planet.constants'; 

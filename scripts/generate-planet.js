@@ -80,150 +80,13 @@ export class ${displayName}Service extends BasePlanetService {
   }
 }`,
 
-  html: (name, displayName) => `<div class="planet-container">
-  <div class="planet-header">
-    <h1>${displayName} Exploration</h1>
-    <p>Explore the surface of ${displayName} and discover seismic activity</p>
-  </div>
+  html: (name, displayName) => `<app-sidebar (filtersChange)="getQuakes($event)"></app-sidebar>
+@if (!isLoading) {
+  <app-earthquake-visualizer [planet]="'${name}'" [quakesData]="quakesData"></app-earthquake-visualizer>
+}`,
 
-  <div class="planet-content">
-    <div class="sidebar-section">
-      <app-sidebar></app-sidebar>
-    </div>
-    
-    <div class="visualization-section">
-      <app-earthquake-visualizer 
-        [planet]="'${name}'"
-        [quakesData]="quakesData">
-      </app-earthquake-visualizer>
-      
-      <div class="loading-overlay" *ngIf="isLoading">
-        <div class="loading-spinner">
-          <div class="spinner"></div>
-          <p>Loading ${displayName} data...</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="planet-info">
-    <div class="info-card">
-      <h3>${displayName} Facts</h3>
-      <ul>
-        <li><strong>Status:</strong> Ready for exploration</li>
-        <li><strong>Type:</strong> Terrestrial planet</li>
-        <li><strong>Exploration:</strong> Active</li>
-      </ul>
-    </div>
-  </div>
-</div>`,
-
-  sass: (name) => `.planet-container
-  padding: 20px
-  max-width: 1200px
-  margin: 0 auto
-
-.planet-header
-  text-align: center
-  margin-bottom: 30px
-  
-  h1
-    color: #2c3e50
-    font-size: 2.5rem
-    margin-bottom: 10px
-  
-  p
-    color: #7f8c8d
-    font-size: 1.1rem
-
-.planet-content
-  display: flex
-  gap: 20px
-  margin-bottom: 30px
-
-.sidebar-section
-  flex: 0 0 250px
-
-.visualization-section
-  flex: 1
-  position: relative
-  min-height: 500px
-
-.loading-overlay
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
-  bottom: 0
-  background: rgba(255, 255, 255, 0.9)
-  display: flex
-  justify-content: center
-  align-items: center
-  z-index: 10
-
-.loading-spinner
-  text-align: center
-  
-  .spinner
-    width: 50px
-    height: 50px
-    border: 4px solid #f3f3f3
-    border-top: 4px solid #3498db
-    border-radius: 50%
-    animation: spin 1s linear infinite
-    margin: 0 auto 15px
-  
-  p
-    color: #7f8c8d
-    font-size: 1rem
-
-@keyframes spin
-  0%
-    transform: rotate(0deg)
-  100%
-    transform: rotate(360deg)
-
-.planet-info
-  .info-card
-    background: white
-    border-radius: 8px
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
-    padding: 20px
-    
-    h3
-      color: #2c3e50
-      margin-bottom: 15px
-      font-size: 1.3rem
-    
-    ul
-      list-style: none
-      padding: 0
-      
-      li
-        padding: 8px 0
-        border-bottom: 1px solid #ecf0f1
-        
-        &:last-child
-          border-bottom: none
-        
-        strong
-          color: #34495e
-          margin-right: 10px
-
-@media (max-width: 768px)
-  .planet-content
-    flex-direction: column
-  
-  .sidebar-section
-    flex: none
-    margin-bottom: 20px
-  
-  .planet-header
-    h1
-      font-size: 2rem
-  
-  .planet-container
-    padding: 15px`,
+  sass: (name) => `// This component uses the shared planet.sass styles
+// No custom styles needed`,
 
   spec: (name, displayName) => `import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ${displayName}Component } from './${name}.component';
@@ -399,7 +262,6 @@ console.log(`✅ Route added to app.routes.ts`);
 console.log(`✅ Planet config added to planet.constants.ts`);
 console.log(`\n📋 Final steps:`);
 console.log(`1. Add planet image to src/assets/images/${planetName}.jpg`);
-console.log(`2. Add the planet to the routes.ts file manually`);
-console.log(`3. Update navigation components (navbar/sidebar) to include ${displayName}`);
-console.log(`4. Test the new route: http://localhost:4200/${planetName}`);
+console.log(`2. Update navigation components (navbar/sidebar) to include ${displayName}`);
+console.log(`3. Test the new route: http://localhost:4200/${planetName}`);
 console.log(`\n🚀 Happy exploring! 🪐`); 
