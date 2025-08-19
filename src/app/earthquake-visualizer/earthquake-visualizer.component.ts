@@ -12,7 +12,6 @@ import { MarkerDetailsModal } from './marker-details-modal/marker-details-modal.
   selector: 'app-earthquake-visualizer',
   templateUrl: './earthquake-visualizer.component.html',
   styleUrls: ['./earthquake-visualizer.component.sass'],
-  standalone: true,
   imports: [MatMenuModule]
 })
 export class EarthquakeVisualizerComponent implements AfterViewInit {

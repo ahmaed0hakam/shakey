@@ -2,6 +2,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
+@use 'sass:color';
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -33,22 +34,22 @@ $light-focused: rgba(white, 0.12);
 $warning-primary: #FDD662;
 
 $jtc-palette: (
-  0: lighten($base-color, 50%),
-  10: lighten($base-color, 40%),
-  20: lighten($base-color, 30%),
-  25: lighten($base-color, 25%),
-  30: lighten($base-color, 20%),
-  35: lighten($base-color, 15%),
+  0: color.adjust($base-color, $lightness: 50%),
+  10: color.adjust($base-color, $lightness: 40%),
+  20: color.adjust($base-color, $lightness: 30%),
+  25: color.adjust($base-color, $lightness: 25%),
+  30: color.adjust($base-color, $lightness: 20%),
+  35: color.adjust($base-color, $lightness: 15%),
   40: $base-color,
-  50: darken($base-color, 10%),
-  60: darken($base-color, 20%),
-  70: darken($base-color, 30%),
-  80: darken($base-color, 40%),
-  90: lighten($base-color, 30%), //here 
-  95: darken($base-color, 55%),
-  98: darken($base-color, 58%),
-  99: darken($base-color, 59%),
-  100: darken($base-color, 60%),
+  50: color.adjust($base-color, $lightness: -10%),
+  60: color.adjust($base-color, $lightness: -20%),
+  70: color.adjust($base-color, $lightness: -30%),
+  80: color.adjust($base-color, $lightness: -40%),
+  90: color.adjust($base-color, $lightness: 30%), //here 
+  95: color.adjust($base-color, $lightness: -55%),
+  98: color.adjust($base-color, $lightness: -58%),
+  99: color.adjust($base-color, $lightness: -59%),
+  100: color.adjust($base-color, $lightness: -60%),
   secondary: (
     0: #000000,
     10: #131c2b,

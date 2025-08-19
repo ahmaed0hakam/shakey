@@ -11,7 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-moon',
-  standalone: true,
   imports: [EarthquakeVisualizerComponent, SidebarComponent, HttpClientModule],
   templateUrl: './moon.component.html',
   styleUrls: ['./moon.component.sass', '../planet.sass'],

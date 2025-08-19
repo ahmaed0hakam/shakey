@@ -6,14 +6,12 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { formatDate } from '@angular/common';
 import { MatCard } from '@angular/material/card';
-import { MatAccordion, matExpansionAnimations, MatExpansionPanel, MatExpansionPanelContent, MatExpansionPanelDescription, MatExpansionPanelHeader, MatExpansionPanelTitle } from '@angular/material/expansion';
 
 
 @Component({
     selector: 'app-sidebar',
-    standalone: true,
     providers: [provideNativeDateAdapter()],
-    imports: [MatCalendar, MatAccordion, MatExpansionPanel, MatCard],
+    imports: [MatCalendar, MatCard],
     changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './sidebar.component.html',
     styleUrl: './sidebar.component.sass'

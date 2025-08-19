@@ -4,7 +4,6 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogActions, MatDialogContent, MatDial
 
 @Component({
   selector: 'app-marker-details-modal',
-  standalone: true,
   templateUrl: './marker-details-modal.component.html',
   styleUrls: ['./marker-details-modal.component.sass'],
   imports: [MatDialogContent, MatDialogActions]

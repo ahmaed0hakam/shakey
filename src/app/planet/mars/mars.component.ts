@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-mars',
-  standalone: true,
   imports: [EarthquakeVisualizerComponent, SidebarComponent, HttpClientModule],
   templateUrl: './mars.component.html',
   styleUrls: ['./mars.component.sass', '../planet.sass'],
