@@ -4,12 +4,12 @@ import { SidebarComponent } from '../../sidebar/sidebar.component';
 import { MarsService } from './mars.service';
 import { finalize } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-mars',
   standalone: true,
-  imports: [EarthquakeVisualizerComponent, SidebarComponent, HttpClientModule, CommonModule],
+  imports: [EarthquakeVisualizerComponent, SidebarComponent, HttpClientModule],
   templateUrl: './mars.component.html',
   styleUrls: ['./mars.component.sass', '../planet.sass'],
   providers: [MarsService]

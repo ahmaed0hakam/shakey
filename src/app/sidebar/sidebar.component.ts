@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule, formatDate } from '@angular/common';
+import { formatDate } from '@angular/common';
 import { MatCard } from '@angular/material/card';
 import { MatAccordion, matExpansionAnimations, MatExpansionPanel, MatExpansionPanelContent, MatExpansionPanelDescription, MatExpansionPanelHeader, MatExpansionPanelTitle } from '@angular/material/expansion';
 
@@ -13,7 +13,7 @@ import { MatAccordion, matExpansionAnimations, MatExpansionPanel, MatExpansionPa
     selector: 'app-sidebar',
     standalone: true,
     providers: [provideNativeDateAdapter()],
-    imports: [CommonModule, MatCalendar, MatAccordion, MatExpansionPanel, MatCard],
+    imports: [MatCalendar, MatAccordion, MatExpansionPanel, MatCard],
     changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './sidebar.component.html',
     styleUrl: './sidebar.component.sass'

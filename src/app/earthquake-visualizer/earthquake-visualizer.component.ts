@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, ElementRef, ViewChild, AfterViewInit, Input } from '@angular/core';
 import * as THREE from 'three';
 import { gsap } from 'gsap';
@@ -13,7 +13,7 @@ import { MarkerDetailsModal } from './marker-details-modal/marker-details-modal.
   templateUrl: './earthquake-visualizer.component.html',
   styleUrls: ['./earthquake-visualizer.component.sass'],
   standalone: true,
-  imports: [CommonModule, MatMenuModule]
+  imports: [MatMenuModule]
 })
 export class EarthquakeVisualizerComponent implements AfterViewInit {
   @ViewChild('canvasContainer', { static: true }) canvasContainer!: ElementRef;

@@ -4,7 +4,7 @@ import { SidebarComponent } from '../../sidebar/sidebar.component';
 import { MoonService } from './moon.service';
 import { finalize } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+
 
 
 
@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-moon',
   standalone: true,
-  imports: [EarthquakeVisualizerComponent, SidebarComponent, HttpClientModule, CommonModule],
+  imports: [EarthquakeVisualizerComponent, SidebarComponent, HttpClientModule],
   templateUrl: './moon.component.html',
   styleUrls: ['./moon.component.sass', '../planet.sass'],
   providers: [MoonService],
