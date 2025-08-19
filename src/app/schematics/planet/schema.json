@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "PlanetSchematic",
+  "title": "Planet Schematic",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the planet (e.g., venus, jupiter, saturn)",
+      "x-prompt": "What is the name of the planet?",
+      "pattern": "^[a-z][a-z0-9]*$"
+    },
+    "displayName": {
+      "type": "string",
+      "description": "The display name of the planet (e.g., Venus, Jupiter, Saturn)",
+      "x-prompt": "What is the display name of the planet?"
+    },
+    "radius": {
+      "type": "number",
+      "description": "The radius of the planet for 3D visualization",
+      "default": 5
+    },
+    "atmosphere": {
+      "type": "boolean",
+      "description": "Does the planet have an atmosphere?",
+      "default": false
+    },
+    "gravity": {
+      "type": "number",
+      "description": "The gravity of the planet relative to Earth",
+      "default": 1.0
+    },
+    "temperature": {
+      "type": "number",
+      "description": "The average temperature of the planet in Celsius",
+      "default": 15
+    },
+    "texturePath": {
+      "type": "string",
+      "description": "Path to the planet texture image",
+      "default": "assets/images/{name}.jpg"
+    },
+    "path": {
+      "type": "string",
+      "description": "The path where the planet folder should be created",
+      "default": "src/app/planet"
+    }
+  },
+  "required": ["name", "displayName"]
+} 

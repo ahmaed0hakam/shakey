@@ -1,0 +1,11 @@
+{
+  "$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "planet": {
+      "description": "Generate a complete planet folder with component, service, and templates",
+      "factory": "./planet/planet.factory#planetSchematic",
+      "schema": "./planet/schema.json",
+      "aliases": ["p"]
+    }
+  }
+} 

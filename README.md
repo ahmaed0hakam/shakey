@@ -31,6 +31,7 @@ A modern Angular-based space exploration application that allows users to explor
 - **Base Classes**: Abstract base classes for common functionality
 - **Type Safety**: Strongly typed interfaces throughout the application
 - **HTTP Interceptors**: Centralized API management and error handling
+- **Custom Schematics**: Automated planet generation with CLI commands
 
 ## 📁 Project Structure
 
@@ -45,6 +46,7 @@ src/
 │   │   └── moon/                 # Moon exploration
 │   ├── sidebar/                   # Side navigation
 │   ├── services/                  # Application services
+│   ├── schematics/                # Custom CLI schematics
 │   └── shared/                    # Shared components & utilities
 │       ├── components/            # Reusable UI components
 │       ├── services/              # Base services & utilities
@@ -102,6 +104,47 @@ getQuakes(): Observable<QuakeData[]> {
 // Interceptor converts to: https://ahmad/api/quakes (dev) or production URL
 ```
 
+## 🪐 Planet Generation
+
+The application includes a custom CLI command to generate new planets automatically:
+
+### Quick Planet Generation
+```bash
+# Generate a new planet with default settings
+npm run generate:planet venus
+
+# Generate with custom display name
+npm run generate:planet jupiter Jupiter
+
+# Or use the script directly
+node scripts/generate-planet.js saturn Saturn
+```
+
+### What Gets Generated
+- **Component**: Extends BasePlanetComponent with proper configuration
+- **Service**: Extends BasePlanetService with planet-specific data
+- **Template**: HTML with earthquake visualizer and sidebar integration
+- **Styles**: Responsive SASS styling following design patterns
+- **Tests**: Component and service test files with proper setup
+
+### Generated Structure
+```
+src/app/planet/{planet-name}/
+├── {planet-name}.component.ts          # Main component
+├── {planet-name}.component.html        # Component template
+├── {planet-name}.component.sass        # Component styles
+├── {planet-name}.component.spec.ts     # Component tests
+├── {planet-name}.service.ts            # Planet service
+└── {planet-name}.service.spec.ts       # Service tests
+```
+
+### Integration Steps
+After generating a planet:
+1. **Add route** in `src/app/app.routes.ts`
+2. **Add planet config** in `src/app/shared/constants/planet.constants.ts`
+3. **Add planet image** to `src/assets/images/{planet}.jpg`
+4. **Update navigation** components
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -155,6 +198,9 @@ ng generate service service-name
 
 # Generate a new directive
 ng generate directive directive-name
+
+# Generate a new planet (custom command)
+npm run generate:planet planet-name
 ```
 
 ### Extending Base Classes
@@ -233,6 +279,7 @@ The application is built with mobile-first responsive design principles, ensurin
 - Maintain type safety with proper interfaces
 - Use relative URLs in services - the interceptor handles the rest
 - Configure API endpoints in environment files
+- Use the planet generation command for new celestial bodies
 
 ## 📄 License
 
@@ -246,6 +293,7 @@ For support and questions:
 - Consult the project documentation and code comments
 - See the shared architecture documentation in `src/app/shared/README.md`
 - Review the interceptor documentation in `src/app/shared/interceptors/README.md`
+- Check the schematics documentation in `src/app/schematics/README.md`
 
 ---
 

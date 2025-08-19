@@ -1,0 +1,38 @@
+<div class="planet-container">
+  <div class="planet-header">
+    <h1><%= displayName %> Exploration</h1>
+    <p>Explore the surface of <%= displayName %> and discover seismic activity</p>
+  </div>
+
+  <div class="planet-content">
+    <div class="sidebar-section">
+      <app-sidebar></app-sidebar>
+    </div>
+    
+    <div class="visualization-section">
+      <app-earthquake-visualizer 
+        [planet]="'<%= planetName %>'"
+        [quakesData]="quakesData">
+      </app-earthquake-visualizer>
+      
+      <div class="loading-overlay" *ngIf="isLoading">
+        <div class="loading-spinner">
+          <div class="spinner"></div>
+          <p>Loading <%= displayName %> data...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="planet-info">
+    <div class="info-card">
+      <h3><%= displayName %> Facts</h3>
+      <ul>
+        <li><strong>Radius:</strong> <%= radius %> units</li>
+        <li><strong>Atmosphere:</strong> <%= atmosphere ? 'Yes' : 'No' %></li>
+        <li><strong>Gravity:</strong> <%= gravity %>x Earth's gravity</li>
+        <li><strong>Temperature:</strong> <%= temperature %>°C</li>
+      </ul>
+    </div>
+  </div>
+</div> 

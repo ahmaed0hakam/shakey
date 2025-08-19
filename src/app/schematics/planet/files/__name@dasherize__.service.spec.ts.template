@@ -1,0 +1,42 @@
+import { TestBed } from '@angular/core/testing';
+import { <%= classify(planetName) %>Service } from './<%= dasherize(planetName) %>.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { QuakeData } from '../../shared/interfaces/planet.interface';
+
+describe('<%= classify(planetName) %>Service', () => {
+  let service: <%= classify(planetName) %>Service;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [<%= classify(planetName) %>Service]
+    });
+    service = TestBed.inject(<%= classify(planetName) %>Service);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+
+  it('should have correct planet name', () => {
+    expect(service['planetName']).toBe('<%= planetName %>');
+  });
+
+  it('should have correct API URL', () => {
+    expect(service['apiUrl']).toBe('https://ahmad/api');
+  });
+
+  it('should return fallback data with correct planet', () => {
+    const fallbackData = service['getFallbackData']();
+    expect(fallbackData).toBeDefined();
+    expect(fallbackData.length).toBeGreaterThan(0);
+    
+    fallbackData.forEach(quake => {
+      expect(quake.planet).toBe('<%= planetName %>');
+    });
+  });
+
+  it('should extend BasePlanetService', () => {
+    expect(service).toBeInstanceOf(<%= classify(planetName) %>Service);
+  });
+}); 

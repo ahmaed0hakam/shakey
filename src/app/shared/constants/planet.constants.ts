@@ -17,7 +17,15 @@ export const PLANET_CONFIGS: Record<string, PlanetConfig> = {
     gravity: 0.38,
     temperature: -63
   }
-};
+  venus: {
+    name: 'Venus',
+    radius: 5,
+    texturePath: 'assets/images/venus.jpg',
+    atmosphere: false,
+    gravity: 1.0,
+    temperature: 15
+  },
+  };
 
 export const THREE_JS_CONFIG = {
   CAMERA: {

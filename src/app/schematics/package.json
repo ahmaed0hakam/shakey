@@ -1,0 +1,27 @@
+{
+  "name": "@shakey/schematics",
+  "version": "1.0.0",
+  "description": "Custom schematics for the Shakey space exploration application",
+  "schematics": "./collection.json",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && jasmine **/*_spec.js"
+  },
+  "keywords": [
+    "schematics",
+    "angular",
+    "space",
+    "exploration",
+    "planet"
+  ],
+  "author": "Shakey Team",
+  "license": "MIT",
+  "dependencies": {
+    "@angular-devkit/core": "^20.0.0",
+    "@angular-devkit/schematics": "^20.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "typescript": "~5.8.3"
+  }
+} 
